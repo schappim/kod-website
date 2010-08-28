@@ -11,6 +11,18 @@
 
 ActiveRecord::Schema.define(:version => 20091003095744) do
 
+  create_table "assets", :force => true do |t|
+    t.string   "caption"
+    t.string   "title"
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "config", :force => true do |t|
     t.string "key",         :limit => 40, :default => "", :null => false
     t.string "value",                     :default => ""
@@ -34,6 +46,12 @@ ActiveRecord::Schema.define(:version => 20091003095744) do
     t.integer  "updated_by_id"
     t.string   "content_type",  :limit => 40
     t.integer  "lock_version",                 :default => 0
+  end
+
+  create_table "page_attachments", :force => true do |t|
+    t.integer "asset_id"
+    t.integer "page_id"
+    t.integer "position"
   end
 
   create_table "page_parts", :force => true do |t|
