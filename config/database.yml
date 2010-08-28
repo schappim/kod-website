@@ -1,8 +1,11 @@
-# SQLite version 3.x
-#   gem install sqlite3-ruby
-development:
+development: &local
   adapter: sqlite3
   database: db/development.sqlite3.db
+
+# Heroku creates it's own database.yml in production so just
+# use the development db locally
+production:
+  <<: *local
 
 # Warning: The database defined as 'test' will be erased and
 # re-generated from your development database when you run 'rake'.
@@ -10,7 +13,3 @@ development:
 test:
   adapter: sqlite3
   database: db/test.sqlite3.db
-
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3.db
