@@ -17,7 +17,7 @@ Radiant::Initializer.run do |config|
   # Only load the extensions named here, in the order given. By default all
   # extensions in vendor/extensions are loaded, in alphabetical order. :all
   # can be used as a placeholder for all extensions not explicitly named.
-  # config.extensions = [ :all ]
+  config.extensions = [ :settings, :all ]
   
   # By default, only English translations are loaded. Remove any of these from
   # the list below if you'd like to provide any of the supported languages
@@ -29,8 +29,8 @@ Radiant::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random,
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :key => '_radiant-heroku_session',
-    :secret      => 'bea4d7e5826708227b612b94753210d18b756ae3'
+    :key    => '_radiant_heroku_session',
+    :secret => 'bea4d7e5826708227b612b94753210d18b756ae3'
   }
 
   # Comment out this line if you want to turn off all caching, or

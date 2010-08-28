@@ -12,8 +12,9 @@
 ActiveRecord::Schema.define(:version => 20091003095744) do
 
   create_table "config", :force => true do |t|
-    t.string "key",   :limit => 40, :default => "", :null => false
-    t.string "value",               :default => ""
+    t.string "key",         :limit => 40, :default => "", :null => false
+    t.string "value",                     :default => ""
+    t.text   "description"
   end
 
   add_index "config", ["key"], :name => "key", :unique => true
