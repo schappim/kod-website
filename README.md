@@ -1,4 +1,4 @@
-== Radiant Heroku
+## Radiant Heroku
 
 Default install of Radiant 0.9.1 tailored for Heroku with a few included plugins.
 
