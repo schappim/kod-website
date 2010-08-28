@@ -1,0 +1,3 @@
+[submodule "vendor/extensions/default_page_parts"]
+	path = vendor/extensions/default_page_parts
+	url = http://github.com/jomz/radiant-default-page-parts-extension.git
