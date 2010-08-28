@@ -10,6 +10,3 @@
 [submodule "vendor/extensions/paperclipped"]
 	path = vendor/extensions/paperclipped
 	url = git://github.com/jsntv200/paperclipped.git
-[submodule "vendor/extensions/paperclipped/vendor/plugins/imagespec"]
-	path = vendor/extensions/paperclipped/vendor/plugins/imagespec
-	url = git://github.com/andersonbrandon/ruby-imagespec.git
