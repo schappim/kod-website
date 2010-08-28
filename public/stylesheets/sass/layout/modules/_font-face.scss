@@ -1,0 +1,7 @@
+@mixin font-face($family, $path, $hash:'') {
+  font-family: $family;
+  src: url("#{$path}.eot");
+  src: local('☺'), 
+       url("#{$path}.ttf") format("truetype"),
+       url("#{$path}.svg#{$hash}") format("svg");
+}

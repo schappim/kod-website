@@ -1,0 +1,85 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1;
+  color: black;
+  background: white; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+/* remember to define focus styles! */
+*:focus {
+  outline: 0; }
+
+/* remember to highlight inserts somehow! */
+ins {
+  text-decoration: none; }
+
+del {
+  text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body {
+  height: 100%; }
+
+body,
+textarea,
+input {
+  color: #222;
+  font-family: Arial, Helvetica, serif; }
+
+body {
+  font-size: 75%;
+  line-height: 1.3em; }
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase; }
+
+h1 {
+  font-size: 220%; }
+
+h2 {
+  font-size: 130%; }
+
+h3 {
+  font-size: 120%; }
+
+h4 {
+  font-size: 110%; }
+
+h5, h6 {
+  font-size: 100%; }
+
+strong {
+  font-weight: bold; }
+
+p, hr, ul {
+  margin: 0 0 1.3em; }
+
+hr {
+  height: 1px;
+  border: 0;
+  border-top: solid 1px #000; }
+
+a {
+  color: #000; }
+  a:hover {
+    background: #CCC; }
+
+i, em {
+  font-style: italic; }

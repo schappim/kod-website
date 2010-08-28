@@ -1,0 +1,20 @@
+@mixin link-default {
+  color:#000;
+
+	&:hover {
+    background:#CCC;
+	}
+}
+
+@mixin link-alt {
+  color:#CCC;
+
+  &:hover {
+    color:#000;
+  }
+}
+
+@mixin link-image {
+  display:block;
+  text-indent:-9999px;
+}
