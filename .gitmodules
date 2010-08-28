@@ -7,3 +7,6 @@
 [submodule "vendor/extensions/paperclipped"]
 	path = vendor/extensions/paperclipped
 	url = git://github.com/jsntv200/paperclipped.git
+[submodule "vendor/extensions/settings"]
+	path = vendor/extensions/settings
+	url = http://github.com/Squeegy/radiant-settings.git
