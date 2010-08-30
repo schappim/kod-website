@@ -1,12 +1,13 @@
 #! /bin/bash
+# A simple bash script wrapping up the common tasks to 
+# setup & deploy an App on Heroku
 
 function output {
   echo "-----> " $1
 }
 
 function install_gitmodules {
-  git submodule init
-  git submodule update
+  git submodule update --init
 }
 
 function remove_gitmodules {
@@ -18,7 +19,7 @@ function remove_gitmodules {
   git commit -m "Heroku setup: Brought submodules into the main repo"
 }
 
-function deploy {  
+function deploy {
   output "What name would you like for your Heroku app ?"
   read -e APP_NAME
 
@@ -38,15 +39,18 @@ function deploy {
   heroku open $APP_NAME
 }
 
-if [ -d "./config" ]; then
+
+if [ -f "./.gitmodules" ]; then
+  ROOT=${PWD}
+    
   output "Importing submodules into the main repo"
   
   # Install all the gitmodules
   install_gitmodules
-
+  
   # Install any gitmodules within the plugins
-  for f in $( find . -mindepth 2 -name .gitmodules ); do
-    cd ${f%/*}
+  for file in $( find . -mindepth 2 -name .gitmodules ); do
+    cd $(cd "${file%/*}" && pwd) 
     install_gitmodules
     rm -rf .git*
   done
@@ -54,11 +58,13 @@ if [ -d "./config" ]; then
   # Heroku doesn't allow gitmodules so import and remove all gitmodules
   output "Removing gitmodules for Heroku"
   
-  cd ${PWD}
+  cd $ROOT
   remove_gitmodules
-
+  
   output "Create & Deploy Heroku App"
   deploy
 else 
-	output "Run this script from the Radiant root directory with ./config/recipes/install-heroku.sh"
+	output "No .gitmodules found."
+	output "Make sure you run this script from the Radiant root"
+	output "and that the .gitmodules exist"
 fi
