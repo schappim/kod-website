@@ -1,0 +1,23 @@
+--- |
+ --- 
+ admin.title: Radiant CMS
+ admin.subtitle: Content Management
+ admin.date_format: "%d-%m-%Y"
+ admin.pagination.per_page: "20"
+ defaults.page.parts: body
+ defaults.page.status: draft
+ defaults.page.filter: Textile
+ default_locale: en
+ session_timeout: "1209600"
+ roles.settings: admin
+ local.timezone: Sydney
+ assets.display_size: normal
+ assets.max_asset_size: "5"
+ assets.additional_thumbnails: normal=640x640>
+ assets.path: ":class/:id/:basename_:style.:extension"
+ assets.storage: s3
+ assets.s3.bucket: ""
+ assets.s3.secret: ""
+ assets.s3.key: ""
+ assets.content_types: image/jpeg, image/pjpeg, image/gif, image/png, image/x-png, image/jpg, video/x-m4v, video/quicktime, application/x-shockwave-flash, audio/mpeg, video/mpeg
+ assets.skip_filetype_validation: "true"
