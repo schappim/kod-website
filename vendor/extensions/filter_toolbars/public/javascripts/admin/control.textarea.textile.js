@@ -20,7 +20,6 @@ Object.extend(Control.TextArea.ToolBar.Textile.prototype, {
 		this.toolbar.container.className ='filter_toolbar';
 
 		Object.extend(this.options,options || {});
-    this.create_preview();
 
 		//buttons
 		this.toolbar.addButton('Bold', function() {
