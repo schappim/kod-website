@@ -12,7 +12,6 @@ Control.TextArea.ToolBar.Textile = Class.create();
 Object.extend(Control.TextArea.ToolBar.Textile.prototype, {
 	textarea: false,
 	toolbar:  false,
-	preview:  new Element('div', {className : 'filter_preview'}),
 	options:  {assets: false},
 
 	initialize: function(textarea, options) {
@@ -156,31 +155,11 @@ Object.extend(Control.TextArea.ToolBar.Textile.prototype, {
 			className: 'filter_quote_button'
 		});
 
-		this.toolbar.addButton('Preview', function() {
-		  this.preview.down().update(Control.TextArea.ToolBar.Textile.format(this.textarea.element.getValue()));
-      this.preview.toggle();
-		  this.textarea.element.toggle();
-		}.bind(this),{
-		  title:     'Preview',
-			className: 'filter_preview_button',
-		});
-
 		this.toolbar.addButton('Help', function() {
 			load_filter_reference('body');
 		},{
 			className: 'filter_help_button'
 		});
-	},
-
-	create_preview: function() {
-	  var padding   = new Element('div', {className : 'filter_preview_inner'});
-
-    this.preview.setStyle({
-      height  : this.textarea.element.getHeight() + 'px',
-      display : 'none'
-    }).insert(padding);
-
-    this.textarea.element.insert({after : this.preview}); 
 	}
 });
 

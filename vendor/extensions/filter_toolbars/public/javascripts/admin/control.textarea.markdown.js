@@ -11,7 +11,6 @@ Control.TextArea.ToolBar.Markdown = Class.create();
 Object.extend(Control.TextArea.ToolBar.Markdown.prototype,{
 	textarea: false,
 	toolbar:  false,
-	preview:  new Element('div', {className : 'filter_preview'}),
 	options:  {assets : false},
 
 	initialize: function(textarea, options) {
@@ -20,7 +19,6 @@ Object.extend(Control.TextArea.ToolBar.Markdown.prototype,{
 		this.toolbar.container.className = 'filter_toolbar';
 
 		Object.extend(this.options,options || {});
-    this.create_preview();
 
 		//buttons
 		this.toolbar.addButton('Bold',function(){
@@ -139,36 +137,12 @@ Object.extend(Control.TextArea.ToolBar.Markdown.prototype,{
 			className: 'filter_quote_button'
 		});
 
-		this.toolbar.addButton('Preview', function() {
-		  var showdown = (typeof(Showdown) != 'undefined') ? new Showdown.converter : false;
-  		
-  		if (showdown) {
-		    this.preview.down().update(showdown.makeHtml(this.textarea.element.getValue()));
-        this.preview.toggle();
-		    this.textarea.element.toggle();		  
-	    }
-		}.bind(this),{
-		  title:     'Preview',
-			className: 'filter_preview_button',
-		});
-
 		this.toolbar.addButton('Help',function() {
 			load_filter_reference('body');
 		},{
   		title:     'Help',
 			className: 'filter_help_button'
 		});
-	},
-
-	create_preview: function() {
-	  var padding   = new Element('div', {className : 'filter_preview_inner'});
-
-    this.preview.setStyle({
-      height  : this.textarea.element.getHeight() + 'px',
-      display : 'none'
-    }).insert(padding);
-
-    this.textarea.element.insert({after : this.preview}); 
 	}
 });
 
