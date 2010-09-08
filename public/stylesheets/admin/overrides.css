@@ -1,1 +1,10 @@
 /* Make your custom overrides here. This file will not be updated by Radiant */
+#header {
+  position:fixed;
+  z-index:1;
+}
+
+#main {
+  clear:both;
+  margin-top:78px;
+}
