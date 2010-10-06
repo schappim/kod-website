@@ -1,4 +1,4 @@
 rails   --version 2.3.8
 radiant --version 0.9.1
 aws-s3  --version 0.6.2
-memcached
+memcached-northscale
