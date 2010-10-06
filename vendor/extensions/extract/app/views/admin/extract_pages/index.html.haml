@@ -1,0 +1,31 @@
+- @page_title = "#{@parent.title} - #{default_page_title}"
+
+.outset
+  = render_region :top
+
+  %table#site_map.index{:summary=>"Page hierarchy of the current page"}
+    %thead
+      %tr
+        - render_region :sitemap_head do |sitemap_head|
+          - sitemap_head.title_column_header do
+            %th.page= t('page') 
+          - sitemap_head.status_column_header do
+            %th.status= t('status')
+          - sitemap_head.published_on_column_header do
+            %th.published_on= t('published_on')
+          - sitemap_head.modify_column_header do
+            %th.modify= t('modify')
+    %tbody
+      - if !@pages.empty?
+        - @pages.each do |page|
+          = render_node page
+      - else
+        %tr
+          %td.empty{:colspan => admin.extract_pages.index.node.length}= t('no_pages')
+
+  = render_region :bottom
+
+#actions
+  = pagination_for @pages
+  %ul
+    %li= link_to image('plus') + " " + t("add") + " #{@parent.title}".singularize, new_admin_page_child_url(@parent)

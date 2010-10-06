@@ -1,0 +1,2 @@
+- if params[:page_id] && params[:action] == "edit"
+  %input{:type => 'hidden', :name => 'redirect_to', :value => request.env["HTTP_REFERER"]}

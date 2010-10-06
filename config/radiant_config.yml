@@ -16,8 +16,6 @@
  assets.additional_thumbnails: normal=640x640>
  assets.path: ":class/:id/:basename_:style.:extension"
  assets.storage: s3
- assets.s3.bucket: ""
- assets.s3.secret: ""
- assets.s3.key: ""
+ assets.url: :s3_domain_url
  assets.content_types: image/jpeg, image/pjpeg, image/gif, image/png, image/x-png, image/jpg, video/x-m4v, video/quicktime, application/x-shockwave-flash, audio/mpeg, video/mpeg
  assets.skip_filetype_validation: "true"

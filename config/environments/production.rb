@@ -22,3 +22,11 @@ config.action_controller.perform_caching             = true
 # config.after_initialize do 
 #   SiteController.cache_timeout = 12.hours
 # end
+
+# Use Memcached on Heroku
+config.gem 'memcached-northscale', :lib => 'memcached'
+require 'memcached'
+
+cache = Memcached.new
+config.cache_store = :mem_cache_store, Memcached::Rails.new
+config.middleware.use ::Radiant::Cache, :metastore => cache, :entitystore => cache

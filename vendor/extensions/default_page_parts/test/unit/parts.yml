@@ -1,0 +1,10 @@
+---
+- name: body
+  filter_id: textile
+  content: Enter your article text here!
+- name: summary
+  filter_id: textile
+  content: blah
+- name: comments
+  filter_id: textile
+  content: "<img src='/images/comments.jpg' /><div id='disqus_thread'></div><script type='text/javascript' src='http://disqus.com/forums/greenbrokenbow/embed.js'></script><noscript><a href='http://greenbrokenbow.disqus.com/?url=ref'>View the discussion thread.</a></noscript><a href='http://disqus.com' class='dsq-brlink'>blog comments powered by <span class='logo-disqus'>Disqus</span></a>"

@@ -25,6 +25,9 @@ function deploy {
 
   output "Creating ${APP_NAME}"
   heroku create $APP_NAME --stack bamboo-ree-1.8.7 
+
+  output "Adding memcache:5mb addon"
+  heroku addons:add memcache:5mb
   
   output "Pushing git repo to ${APP_NAME}"
   git push heroku master
