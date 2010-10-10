@@ -1,7 +1,9 @@
+Dir.glob(File.dirname(__FILE__) + '/lib/*') {|file| require_dependency file unless File.directory?(file)}
+
 class ExtractExtension < Radiant::Extension
   version "1.0"
   description "Extract a pages children into its own paginated tab within the admin"
-  url "http://yourwebsite.com/extract"
+  url "http://github.com/jsntv200/extract"
 
   extension_config do |config|
     config.after_initialize do      
@@ -15,22 +17,25 @@ class ExtractExtension < Radiant::Extension
     ExtractPage
     ExtractArchivePage
     
-    admin.page.edit.add :form, "redirect"
-    
-    Radiant::AdminUI.class_eval do
-      attr_accessor :extract_pages
-    end
-    admin.extract_pages = load_default_settings_regions
+    Page.send :include, Extract::PageExt
 
+    # Patches to correctly redirect after a "Save", "Save And Continue" or "Cancel" action
+    Admin::ResourceController.send :include, Extract::ResourceControllerExt
+
+    # Index page UI elements
+    admin.class_eval { attr_accessor :extracts }
+    admin.extracts = load_default_settings_regions
+
+    # Display the Tabs
     set_tab
   end
 
   def set_tab
-    pages = Page.find(:all, :order => "slug DESC", :conditions => ["class_name = ? OR class_name = ?", "ExtractPage", "ExtractArchivePage"])
-    
+    pages = Page.find_all_by_class_name(["ExtractPage", "ExtractArchivePage"], :order => "slug DESC")    
+        
     tab 'Content' do
       pages.each do |page|
-        add_item page.title, "/admin/pages/#{page.id}/extract", :before => "Assets"
+        add_item page.title, "/admin/extracts/#{page.id}/children", :before => "Assets"
       end
     end if pages
   end
@@ -46,5 +51,3 @@ class ExtractExtension < Radiant::Extension
     end
   end
 end
-
-

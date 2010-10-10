@@ -3,7 +3,7 @@
     - node.title_column do
       %td.page{:style => "padding-left: #{padding_left(level)}px"}
         %span.w1
-          - if page.is_a?(ExtractPage) || page.is_a?(ExtractArchivePage)
+          - if page.is_extract?
             = link_to("#{icon} #{node_title}", edit_admin_page_url(page), :title => page.url)
             = page_type
           - else
@@ -18,7 +18,7 @@
       - unless simple
         %td.status{:class => "#{page.status.name.downcase}_status", :title => "#{timestamp(page.published_at) if page.published_at}"}= t(page.status.name.downcase)
     - node.add_child_column do
-      - unless simple || @extract
+      - unless simple
         %td.add_child= link_to t('add_child'), new_admin_page_child_url(page)
     - node.remove_column do
       - unless simple

@@ -1,7 +1,10 @@
-- @page_title = "#{@parent.title} - #{default_page_title}"
+- @page_title = "#{@page.title} - #{default_page_title}"
 
 .outset
-  = render_region :top
+  .filters
+    - form_tag(admin_extract_children_path(@page), :id => 'extract-search', :method => 'get') do
+      %input{ :type => "search", :id => "search", :name => "search" , :value => params[:search], :placeholder => "Search" }
+      = submit_tag "Submit", :name => nil
 
   %table#site_map.index{:summary=>"Page hierarchy of the current page"}
     %thead
@@ -16,16 +19,16 @@
           - sitemap_head.modify_column_header do
             %th.modify= t('modify')
     %tbody
-      - if !@pages.empty?
-        - @pages.each do |page|
+      - if !@children.empty?
+        - @children.each do |page|
           = render_node page
       - else
         %tr
-          %td.empty{:colspan => admin.extract_pages.index.node.length}= t('no_pages')
+          %td.empty{:colspan => admin.extracts.index.node.length}= t('no_pages')
 
   = render_region :bottom
 
 #actions
-  = pagination_for @pages
+  = pagination_for @children
   %ul
-    %li= link_to image('plus') + " " + t("add") + " #{@parent.title}".singularize, new_admin_page_child_url(@parent)
+    %li= link_to image('plus') + " " + t("add") + " #{@page.title}".singularize, new_admin_page_child_url(@page)
