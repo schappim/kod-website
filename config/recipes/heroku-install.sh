@@ -2,6 +2,8 @@
 # A simple bash script wrapping up the common tasks to 
 # setup & deploy an App on Heroku
 
+ROOT=${PWD}
+  
 function output {
   echo "-----> " $1
 }
@@ -44,8 +46,6 @@ function deploy {
 
 
 if [ -f "./.gitmodules" ]; then
-  ROOT=${PWD}
-    
   output "Importing submodules into the main repo"
   
   # Install all the gitmodules
@@ -63,11 +63,8 @@ if [ -f "./.gitmodules" ]; then
   
   cd $ROOT
   remove_gitmodules
-  
-  output "Create & Deploy Heroku App"
-  deploy
-else 
-	output "No .gitmodules found."
-	output "Make sure you run this script from the Radiant root"
-	output "and that the .gitmodules exist"
 fi
+
+
+output "Create & Deploy Heroku App"
+deploy
