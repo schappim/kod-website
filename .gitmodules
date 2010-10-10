@@ -1,0 +1,12 @@
+[submodule "vendor/extensions/settings"]
+	path = vendor/extensions/settings
+	url = http://github.com/Squeegy/radiant-settings.git
+[submodule "vendor/extensions/default_page_parts"]
+	path = vendor/extensions/default_page_parts
+	url = http://github.com/jomz/radiant-default-page-parts-extension.git
+[submodule "vendor/extensions/extract"]
+	path = vendor/extensions/extract
+	url = http://github.com/jsntv200/extract.git
+[submodule "vendor/extensions/paperclipped"]
+	path = vendor/extensions/paperclipped
+	url = http://github.com/jsntv200/paperclipped.git
