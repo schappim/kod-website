@@ -1,0 +1,16 @@
+%tr.node.page{:class =>"level_#{level}#{children_class}#{virtual_class}", :id => "page_#{page.id}"}
+  - render_region :node, :locals => {:page => page, :level => level, :simple => simple} do |node|
+    - node.title_column do
+      %td.page{:style => "padding-left: #{padding_left(level)}px"}
+        %span.w1
+          = link_to("#{icon} #{node_title}", edit_admin_extract_child_url(@page, page), :title => page.url)
+          = page_type
+    - node.status_column do
+      - unless simple
+        %td.status{:class => "#{page.status.name.downcase}_status", :title => "#{timestamp(page.published_at) if page.published_at}"}= t(page.status.name.downcase)
+    - node.published_on_column do
+      - unless simple
+        %td.published_on{:class => "status"}= page.published_at.strftime(config['admin.date_format']) if page.published_at
+    - node.modify_column do
+      - unless simple
+        %td.remove= link_to t('remove'), remove_admin_page_url(page)

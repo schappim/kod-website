@@ -1,0 +1,14 @@
+development: &local
+  bucket: <bucket name>
+  access_key_id: <key_id>
+  secret_access_key: <access_key>
+
+test:
+  bucket: <bucket name>
+  access_key_id: <key_id>
+  secret_access_key: <access_key>
+
+production:
+  bucket: <bucket name>
+  access_key_id: <key_id>
+  secret_access_key: <access_key>

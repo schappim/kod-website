@@ -1,0 +1,2 @@
+class ExtractPage < Page
+end
