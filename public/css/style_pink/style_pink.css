@@ -1,0 +1,107 @@
+
+/************************************************************************
+-) LINK COLOR
+*************************************************************************/
+
+a, .sf-menu a:hover, .service h3 a:hover, .blog h2 a:hover, .sidebar ul li a:hover, .sidebar .current a, ul#portfolio-filter a.current  {
+	color: #e831e4;
+}
+
+a:hover, .sf-menu a:hover, .sf-menu .current a, .footer_text a:hover, .copyright a:hover, #fullwidth_footer_top a:hover {
+	color: #d620b1;
+}
+
+
+a.work_btn_two, .form-button-right, #contact input.submit {
+	background:#e831e4;
+}
+
+a:hover.work_btn_two, .form-button-right:hover, #contact input.submit:hover {
+	background:#d620b1;
+}
+
+
+/************************************************************************
+-) LOGO
+*************************************************************************/
+
+
+.logo a {
+	background: transparent url('images/logo.png') no-repeat top left;
+}
+
+
+/************************************************************************
+-) BUTTONS
+*************************************************************************/
+
+/*** BUTTON BIG ***/
+
+a.btn-big { 
+	background: transparent url(images/btn-big-right.jpg) no-repeat scroll top right; 
+	display: block;  
+	float: left; 
+	height: 77px; 
+	margin-right: 6px; 
+	padding-right: 30px;  
+	text-decoration: none;
+	text-transform: uppercase; 
+	color: #fff; 
+	text-shadow: 1px 2px 1px #9a1b88;
+	font-family: Arial, Helvetica, sans-serif;  
+	font-size:22px; 
+	font-weight:bold; 
+}
+
+a.btn-big span { 
+	background: transparent url(images/btn-big-left.jpg) no-repeat; 
+	display: block; 
+	line-height: 77px; 
+	padding: 0px 0 5px 30px; 
+	text-align:center; 
+}
+
+a.btn-big:hover { 
+	background: transparent url(images/btn-big-righth.jpg) no-repeat scroll top right;  
+}
+
+a.btn-big:hover span { 
+	background: transparent url(images/btn-big-lefth.jpg) no-repeat;  
+	color: #fff; 
+	text-align:center; 
+}
+
+/*** BUTTON SMALL ***/
+
+a.btn { 
+	background: transparent url(images/btn-right.jpg) no-repeat scroll top right; 
+	display: block;  
+	float: left; 
+	height: 46px; 
+	margin-right: 6px; 
+	padding-right: 30px;  
+	text-decoration: none; 
+	color: #fff; 
+	text-shadow: 1px 2px 1px #9a1b88;
+	font-family: Arial, Helvetica, sans-serif;  
+	font-size:18px; 
+	font-weight:bold; 
+}
+
+a.btn span { 
+	background: transparent url(images/btn-left.jpg) no-repeat; 
+	display: block; 
+	line-height: 46px; 
+	padding: 0px 0 5px 30px; 
+	text-align:center; 
+}
+
+a.btn:hover { 
+	background: transparent url(images/btn-righth.jpg) no-repeat scroll top right;  
+}
+
+a.btn:hover span { 
+	background: transparent url(images/btn-lefth.jpg) no-repeat;  
+	color: #fff; 
+	text-align:center; 
+}

@@ -1,0 +1,60 @@
+
+/************************************************************************
+-) MAIN
+*************************************************************************/
+
+#main_content {
+	margin-top: 50px;
+}
+
+hr {
+	border-bottom-width: 1px;
+	border-bottom-color: #dedede;
+	clear: both;
+}
+
+/************************************************************************
+-) SIDEBAR
+*************************************************************************/
+
+.sidebar ul li a:hover, .sidebar .current a {
+	padding-left: 20px;
+	background: url(../images/nav_sb.png) 0 10px no-repeat; 
+}
+
+
+.portfolio-item {
+	background: #ebebeb;
+	margin-right: 10px;
+	margin-bottom: 50px;
+}
+
+
+/************************************************************************
+-) FOOTER
+*************************************************************************/
+
+.social_bookmarks_footer {
+	float: left;
+	height: 24px;
+	list-style-type: none;
+	z-index: 6;
+}
+
+.social_bookmarks_footer li {
+	float:left;
+	margin:0;
+	width:24px;
+	padding:0 7px 0 0;
+}
+
+.social_bookmarks_footer li a {
+	height:24px;
+	width:24px;
+	display: block;
+	float:left;
+	text-indent: -9999px;
+	border:none;
+	padding:0;
+	outline: none;
+}
